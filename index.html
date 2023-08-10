@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SchoologyX Dashboard</title>
+</head>
+<body>
+    <nav>
+        <div class="brand">SchoologyX</div>
+    </nav>
+    <header>
+        <h1 id="greeting"></h1>
+    </header>
+    <main>
+        <section class="assignments">
+            <h2>Assignments</h2>
+            <button class="see-more-button">See More</button>
+            <div class="assignment-container">
+                <button class="slider-button slider-button-left">&larr;</button>
+                <div class="assignment-box">
+                    <!-- Assignments will be loaded dynamically through JavaScript -->
+                </div>
+                <button class="slider-button slider-button-right">&rarr;</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
