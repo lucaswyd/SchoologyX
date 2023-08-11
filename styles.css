@@ -1,4 +1,25 @@
 /* Update font-family for Museo Sans */
+@font-face {
+    font-family: "Museo Sans";
+    src: url("fonts/MuseoSans-100.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Museo Sans";
+    src: url("fonts/MuseoSans-300.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Museo Sans";
+    src: url("fonts/MuseoSans-500.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
 body {
     font-family: "Museo Sans", "Helvetica Neue", Arial, sans-serif;
     background-image: url('https://cdn.discordapp.com/attachments/671694363235057675/967830744355454986/unknown.png');
