@@ -6,8 +6,32 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <title>SchoologyX Dashboard</title>
+    <!-- Add the overlay animation CSS -->
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 9999;
+            animation: fadeOut 1s ease-in-out;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Add the overlay element -->
+    <div class="overlay"></div>
     <div class="container">
         <nav>
             <div class="brand">SchoologyX</div>
