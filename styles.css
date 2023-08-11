@@ -1,21 +1,21 @@
 /* Update font-family for Museo Sans */
 @font-face {
     font-family: "Museo Sans";
-    src: url("fonts/MuseoSans-100.otf") format("opentype");
+    src: url("https://lucaswyd.github.io/SchoologyX/fonts/MuseoSans-100.otf") format("opentype");
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Museo Sans";
-    src: url("fonts/MuseoSans-300.otf") format("opentype");
+    src: url("https://lucaswyd.github.io/SchoologyX/fonts/MuseoSans-300.ot") format("opentype");
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Museo Sans";
-    src: url("fonts/MuseoSans-500.otf") format("opentype");
+    src: url("https://lucaswyd.github.io/SchoologyX/fonts/MuseoSans-500.ot") format("opentype");
     font-weight: 500;
     font-style: normal;
 }
