@@ -5,32 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>SchoologyX Dashboard</title>
+    <!-- Link the Museo Sans font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Museo+Sans:wght@300;400;500&display=swap">
 </head>
 <body>
-    /* Update font-family */
-body {
-    font-family: "Museo Sans", sans-serif;
-    /* Rest of your styles */
-}
-    <nav>
-        <div class="brand">SchoologyX</div>
-    </nav>
-    <header>
-        <h1 id="greeting"></h1>
-    </header>
-    <main>
-        <section class="assignments">
-            <h2>Assignments</h2>
-            <button class="see-more-button">See More</button>
-            <div class="assignment-container">
-                <button class="slider-button slider-button-left">&larr;</button>
-                <div class="assignment-box">
-                    <!-- Assignments will be loaded dynamically through JavaScript -->
+    <div class="container">
+        <nav>
+            <div class="brand">SchoologyX</div>
+        </nav>
+        <header>
+            <h1 id="greeting"></h1>
+        </header>
+        <main>
+            <section class="assignments">
+                <h2>Assignments</h2>
+                <div class="assignment-container">
+                    <button class="slider-button slider-button-left">&larr;</button>
+                    <div class="assignment-box">
+                        <!-- Assignments will be loaded dynamically through JavaScript -->
+                    </div>
+                    <button class="slider-button slider-button-right">&rarr;</button>
                 </div>
-                <button class="slider-button slider-button-right">&rarr;</button>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
