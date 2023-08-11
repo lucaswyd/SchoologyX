@@ -1,3 +1,14 @@
+// Add this at the beginning of your script.js file
+window.addEventListener("load", () => {
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    document.body.appendChild(overlay);
+
+    setTimeout(() => {
+        overlay.remove();
+    }, 1000); // Remove the overlay after the animation duration
+});
+
 // Sample assignment data
 const assignments = [
     { name: "Math Assignment", dueDate: "August 15" },
