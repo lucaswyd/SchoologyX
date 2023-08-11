@@ -16,26 +16,30 @@
             height: 100%;
             background-color: black;
             z-index: 9999;
-            opacity: 0; /* Set initial opacity to 0 */
-            animation: expandCircle 1s ease-in-out forwards; /* Apply the expandCircle animation */
+            opacity: 1;
+            animation: revealContent 1s ease-in-out forwards; /* Apply the revealContent animation */
         }
 
-        /* Keyframes for circle animation */
-        @keyframes expandCircle {
+        .content-wrapper {
+            display: none;
+        }
+
+        /* Keyframes for reveal animation */
+        @keyframes revealContent {
             0% {
                 opacity: 1;
-                transform: scale(0);
             }
             100% {
                 opacity: 0;
-                transform: scale(1);
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
-    <div class="container">
+    <div class="overlay">
+        <div class="content-wrapper">
+            <div class="container">
         <nav>
             <div class="brand">SchoologyX</div>
         </nav>
@@ -49,18 +53,9 @@
                     <button class="slider-button slider-button-left">&larr;</button>
                     <div class="assignment-box">
                         <!-- Assignments will be loaded dynamically through JavaScript -->
-                    </div>
-                    <button class="slider-button slider-button-right">&rarr;</button>
-                </div>
-            </section>
-        </main>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
