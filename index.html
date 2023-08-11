@@ -6,6 +6,32 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <title>SchoologyX Dashboard</title>
+    <style>
+        /* Overlay animation styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 9999;
+            opacity: 0; /* Set initial opacity to 0 */
+            animation: expandCircle 1s ease-in-out forwards; /* Apply the expandCircle animation */
+        }
+
+        /* Keyframes for circle animation */
+        @keyframes expandCircle {
+            0% {
+                opacity: 1;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="overlay"></div>
@@ -32,3 +58,9 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
