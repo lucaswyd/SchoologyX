@@ -10,6 +10,9 @@ window.addEventListener("load", () => {
     }, 1000);
 });
 
+// Your existing JavaScript code
+// ...
+
 
 // Sample assignment data
 const assignments = [
