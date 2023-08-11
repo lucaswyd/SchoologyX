@@ -4,10 +4,12 @@ window.addEventListener("load", () => {
     overlay.classList.add("overlay");
     document.body.appendChild(overlay);
 
+    // Remove the overlay after the animation duration
     setTimeout(() => {
         overlay.remove();
-    }, 1000); // Remove the overlay after the animation duration
+    }, 1000);
 });
+
 
 // Sample assignment data
 const assignments = [
