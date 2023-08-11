@@ -1,27 +1,26 @@
-/* Update font-family for Museo Sans */
 @font-face {
     font-family: "Museo Sans";
-    src: url("https://lucaswyd.github.io/SchoologyX/fonts/MuseoSans-100.otf") format("opentype");
+    src: url("fonts/MuseoSans-100.otf") format("opentype");
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Museo Sans";
-    src: url("https://lucaswyd.github.io/SchoologyX/fonts/MuseoSans-300.otf") format("opentype");
+    src: url("fonts/MuseoSans-300.otf") format("opentype");
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Museo Sans";
-    src: url("https://lucaswyd.github.io/SchoologyX/fonts/MuseoSans-500.otf") format("opentype");
+    src: url("fonts/MuseoSans-500.otf") format("opentype");
     font-weight: 500;
     font-style: normal;
 }
 
 body {
-    font-family: "Museo Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Raleway", Arial, sans-serif;
     background-image: url('https://cdn.discordapp.com/attachments/671694363235057675/967830744355454986/unknown.png');
     background-size: cover;
     color: white;
@@ -57,6 +56,7 @@ header {
 
 h1 {
     font-size: 2rem;
+    font-weight: 500;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -71,7 +71,7 @@ main {
 
 .assignment-container {
     display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: auto;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
@@ -82,16 +82,15 @@ main {
 .assignment-box {
     display: flex;
     gap: 1rem;
-    flex-wrap: nowrap; /* Ensure assignments don't wrap to the next row */
-    /* Rest of your styles */
+    flex-wrap: nowrap;
 }
 
 .assignment {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 1rem;
-    width: calc(33.33% - 1rem);
     border-radius: 8px;
     margin-bottom: 1rem;
+    min-width: 250px; /* Minimum width for assignment boxes */
 }
 
 h2 {
