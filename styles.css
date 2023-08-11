@@ -1,114 +1,16 @@
+/* Update font-family */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
+    font-family: "Museo Sans", sans-serif;
+    background-image: url('https://lucaswyd.github.io/SchoologyX/background.png');
+    background-size: cover;
     color: white;
     margin: 0;
     padding: 0;
 }
 
-nav {
-    background-color: #121212;
-    color: white;
-    padding: 1rem;
-    text-align: left;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.brand {
-    font-size: 1.5rem;
-}
-
-header {
-    background-color: #121212;
-    padding: 1rem;
-    text-align: center;
-}
-
-h1 {
-    font-size: 1.5rem;
-    color: white;
-}
-
-main {
-    padding: 2rem;
-}
-
-.assignments {
-    margin-top: 2rem;
-}
-
-.assignment-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.assignment {
-    background-color: #363636;
-    padding: 1rem;
-    width: calc(33.33% - 1rem);
-    border-radius: 8px;
-}
-
-h2 {
-    font-size: 1.25rem;
-}
-
-h3 {
-    font-size: 1rem;
-}
-
-p {
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-}
-
-.see-more-button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    font-size: 0.875rem;
-    cursor: pointer;
-    margin-bottom: 1rem;
-}
-
-
-.assignment-container {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-}
-
-.assignment-box {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-    /* Customize the width of each assignment here */
-}
-
-.assignment {
-    background-color: #363636;
-    padding: 1rem;
-    width: 250px; /* Adjust this value based on your preference */
-    border-radius: 8px;
-    margin-right: 1rem; /* Add some spacing between assignments */
-}
-
-.slider-button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider-button-left {
-    margin-right: auto;
-}
-
-.slider-button-right {
-    margin-left: auto;
-}
+/* Rest of your styles */
