@@ -1,7 +1,7 @@
 /* Update font-family for Museo Sans */
 body {
-    font-family: "Museo Sans", sans-serif;
-    background-image: url('https://lucaswyd.github.io/SchoologyX/background.png');
+    font-family: "Museo Sans", "Helvetica Neue", Arial, sans-serif;
+    background-image: url('https://cdn.discordapp.com/attachments/671694363235057675/967830744355454986/unknown.png');
     background-size: cover;
     color: white;
     margin: 0;
@@ -38,7 +38,6 @@ h1 {
     font-size: 2rem;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 1rem; /* Add spacing */
 }
 
 main {
@@ -122,4 +121,4 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Rest of your styles */
+/* Rest of your CSS styles */
