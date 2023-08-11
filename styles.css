@@ -1,4 +1,4 @@
-/* Update font-family */
+/* Update font-family for Museo Sans */
 body {
     font-family: "Museo Sans", sans-serif;
     background-image: url('https://lucaswyd.github.io/SchoologyX/background.png');
@@ -11,6 +11,115 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+nav {
+    background-color: transparent;
+    padding: 1rem;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.brand {
+    font-size: 1.5rem;
+    color: white;
+}
+
+header {
+    background-color: transparent;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 1rem; /* Add spacing */
+}
+
+main {
+    padding: 2rem;
+}
+
+.assignments {
+    margin-top: 2rem;
+}
+
+.assignment-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.assignment-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.assignment {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    width: calc(33.33% - 1rem);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: white;
+}
+
+p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.slider-button {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.slider-button-left {
+    margin-right: 1rem;
+}
+
+.slider-button-right {
+    margin-left: 1rem;
+}
+
+.see-more-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 /* Rest of your styles */
