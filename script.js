@@ -19,17 +19,18 @@ const seeMoreButton = document.querySelector(".see-more-button"); // Add referen
 
 let currentIndex = 0;
 
-// Function to display the current assignment
-function displayAssignment(index) {
-    const assignment = assignments[index];
-    if (assignment) {
-        assignmentBox.innerHTML = `
+// Function to display all assignments
+function displayAssignments() {
+    assignmentBox.innerHTML = ''; // Clear existing assignments
+
+    assignments.forEach((assignment) => {
+        assignmentBox.innerHTML += `
             <div class="assignment">
                 <h3>${assignment.name}</h3>
                 <p>Due: ${assignment.dueDate}</p>
             </div>
         `;
-    }
+    });
 }
 
 // Greetings based on time of day
@@ -51,17 +52,17 @@ document.getElementById("greeting").textContent = `${greeting}, Lucas!`;
 // Event listener for the right button
 rightButton.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % assignments.length;
-    displayAssignment(currentIndex);
+    displayAssignments();
 });
 
 // Event listener for the left button
 leftButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + assignments.length) % assignments.length;
-    displayAssignment(currentIndex);
+    displayAssignments();
 });
 
 // Initial display
-displayAssignment(currentIndex);
+displayAssignments();
 
 // Event listener for the "See All" button
 seeMoreButton.addEventListener("click", () => {
