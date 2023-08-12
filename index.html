@@ -6,54 +6,29 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <title>SchoologyX Dashboard</title>
-    <style>
-        /* Overlay animation styles */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            z-index: 9999;
-            opacity: 1;
-            animation: revealContent 1s ease-in-out forwards; /* Apply the revealContent animation */
-        }
-
-        .content-wrapper {
-            display: none;
-        }
-
-        /* Keyframes for reveal animation */
-        @keyframes revealContent {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                display: none;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="overlay">
-        <div class="content-wrapper">
-            <div class="container">
-        <nav>
-            <div class="brand">SchoologyX</div>
-        </nav>
-        <header>
-            <h1 id="greeting"></h1>
-        </header>
-        <main>
-            <section class="assignments">
-                <h2>Assignments</h2>
-                <div class="assignment-container">
-                    <button class="slider-button slider-button-left">&larr;</button>
-                    <div class="assignment-box">
-                        <!-- Assignments will be loaded dynamically through JavaScript -->
-            </div>
+    <div class="overlay"></div>
+    <div class="content-wrapper">
+        <div class="container">
+            <nav>
+                <div class="brand">SchoologyX</div>
+            </nav>
+            <header>
+                <h1 id="greeting"></h1>
+            </header>
+            <main>
+                <section class="assignments">
+                    <h2>Assignments</h2>
+                    <div class="assignment-container">
+                        <button class="slider-button slider-button-left">&larr;</button>
+                        <div class="assignment-box">
+                            <!-- Assignments will be loaded dynamically through JavaScript -->
+                        </div>
+                        <button class="slider-button slider-button-right">&rarr;</button>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
     <script src="script.js"></script>
