@@ -75,12 +75,27 @@ main {
 .assignment-container {
     display: flex;
     overflow-x: auto;
-    width: 100%;
+    overflow-y: hidden;
+    height: calc(100vh - 3rem); /* Adjust the height to your preference */
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
     align-items: flex-start;
+    position: relative; /* Add this to establish a positioning context */
+}
+
+.see-all-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
 }
 
 .assignment-box {
