@@ -15,24 +15,22 @@ const assignments = [
 const assignmentContainer = document.querySelector(".assignment-container");
 const seeAllButton = document.querySelector(".see-all-button");
 
-// Function to display the current assignment
-function displayAssignments() {
-    assignmentContainer.innerHTML = assignments
-        .map(
-            assignment => `
-                <div class="assignment">
-                    <h3>${assignment.name}</h3>
-                    <p>Due: ${assignment.dueDate}</p>
-                </div>
-            `
-        )
-        .join("");
+// Rest of your existing code
+
+// Hide overlay and show content
+function hideOverlay() {
+    const overlay = document.querySelector(".overlay");
+    overlay.style.animation = "fadeOut 1s ease-in-out";
+    setTimeout(() => {
+        overlay.style.display = "none";
+    }, 1000);
 }
 
-// Event listener for the "See All" button
-seeAllButton.addEventListener("click", () => {
-    assignmentContainer.classList.toggle("expanded");
-});
+// Display assignments and hide overlay
+function displayAssignments() {
+    displayAssignment(currentIndex);
+    hideOverlay(); // Hide overlay after assignments are displayed
+}
 
 // Initial display
 displayAssignments();
