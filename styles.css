@@ -166,6 +166,9 @@ p {
 /* Rest of your CSS styles */
 
 /* Overlay animation styles */
+/* Rest of your existing styles */
+
+/* Overlay animation styles */
 .overlay {
     position: fixed;
     top: 0;
@@ -174,17 +177,50 @@ p {
     height: 100%;
     background-color: black;
     z-index: 9999;
-    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeOut 1s ease-in-out;
 }
 
-/* Keyframes for circle animation */
-@keyframes expandCircle {
-    0% {
-        opacity: 1;
-        transform: scale(0);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
+/* Container for assignments */
+.assignment-container {
+    display: flex;
+    gap: 1rem;
+    width: calc(100% - 2rem); /* Reduce container width by padding */
+    max-height: calc(100vh - 6rem); /* Adjust height based on viewport */
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: rgba(0, 0, 0, 0.8); /* Less transparent background */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: max-height 0.5s ease-in-out;
 }
+
+/* Assignments */
+.assignment {
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    min-width: 250px;
+    flex: 0 0 auto; /* Prevent assignments from growing */
+}
+
+/* See All button */
+.see-all-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.see-all-button:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
