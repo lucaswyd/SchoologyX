@@ -11,28 +11,59 @@ const assignments = [
     // Add more assignments here
 ];
 
-// Get a reference to the assignment container and the "See All" button
-const assignmentContainer = document.querySelector(".assignment-container");
-const seeAllButton = document.querySelector(".see-all-button");
+// Get a reference to the assignment box and the slider buttons
+const assignmentBox = document.querySelector(".assignment-box");
+const leftButton = document.querySelector(".slider-button-left");
+const rightButton = document.querySelector(".slider-button-right");
+const seeMoreButton = document.querySelector(".see-more-button"); // Add reference to the "See All" button
+
+let currentIndex = 0;
 
 // Function to display the current assignment
-function displayAssignments() {
-    assignmentContainer.innerHTML = assignments
-        .map(
-            assignment => `
-                <div class="assignment">
-                    <h3>${assignment.name}</h3>
-                    <p>Due: ${assignment.dueDate}</p>
-                </div>
-            `
-        )
-        .join("");
+function displayAssignment(index) {
+    const assignment = assignments[index];
+    if (assignment) {
+        assignmentBox.innerHTML = `
+            <div class="assignment">
+                <h3>${assignment.name}</h3>
+                <p>Due: ${assignment.dueDate}</p>
+            </div>
+        `;
+    }
 }
 
-// Event listener for the "See All" button
-seeAllButton.addEventListener("click", () => {
-    assignmentContainer.classList.toggle("expanded");
+// Greetings based on time of day
+const currentHour = new Date().getHours();
+let greeting = "";
+if (currentHour >= 0 && currentHour < 7) {
+    greeting = "Rise and Shine";
+} else if (currentHour >= 7 && currentHour < 12) {
+    greeting = "Good Morning";
+} else if (currentHour >= 12 && currentHour < 18) {
+    greeting = "Good Afternoon";
+} else {
+    greeting = "Good Evening";
+}
+
+// Display the greeting
+document.getElementById("greeting").textContent = `${greeting}, Lucas!`;
+
+// Event listener for the right button
+rightButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % assignments.length;
+    displayAssignment(currentIndex);
+});
+
+// Event listener for the left button
+leftButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + assignments.length) % assignments.length;
+    displayAssignment(currentIndex);
 });
 
 // Initial display
-displayAssignments();
+displayAssignment(currentIndex);
+
+// Event listener for the "See All" button
+seeMoreButton.addEventListener("click", () => {
+    assignmentBox.style.flexWrap = "wrap"; // Adjust flex-wrap property to wrap assignments
+});
