@@ -163,46 +163,44 @@ p {
 }
 
 /* Container for assignments */
+/* Rest of your existing styles */
+
 .assignment-container {
     display: flex;
-    gap: 1rem;
-    width: calc(100% - 2rem); /* Reduce container width by padding */
-    max-height: calc(100vh - 6rem); /* Adjust height based on viewport */
     overflow-x: auto;
-    overflow-y: hidden;
-    background-color: rgba(0, 0, 0, 0.8); /* Less transparent background */
+    width: 100%;
+    background-color: transparent;
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
-    transition: max-height 0.5s ease-in-out;
+    backdrop-filter: blur(8px); /* Add a blur effect to the container */
+    -webkit-backdrop-filter: blur(8px);
 }
 
-/* Assignments */
+.assignment-box {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    align-items: flex-start; /* Align items to the top */
+}
+
 .assignment {
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency */
+    background-color: rgba(255, 255, 255, 0.2); /* Off-white with transparency */
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-    min-width: 250px;
-    flex: 0 0 auto; /* Prevent assignments from growing */
+    min-width: 250px; /* Minimum width for assignment boxes */
 }
 
-/* See All button */
-.see-all-button {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: rgba(0, 0, 0, 0.8);
+.see-more-button {
+    background-color: transparent;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out;
+    position: absolute;
+    top: 1rem;
+    right: 1rem; /* Position the button at the top right */
+    z-index: 2; /* Place the button above assignments */
 }
-
-.see-all-button:hover {
-    background-color: rgba(0, 0, 0, 1);
-}
-
