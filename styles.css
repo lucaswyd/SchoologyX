@@ -74,44 +74,26 @@ main {
 
 .assignment-container {
     display: flex;
+    gap: 1rem;
+    width: calc(100% - 2rem); /* Reduce container width by padding */
+    max-height: calc(100vh - 6rem); /* Adjust height based on viewport */
     overflow-x: auto;
     overflow-y: hidden;
-    height: calc(100vh - 3rem); /* Adjust the height to your preference */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8); /* Less transparent background */
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
-    align-items: flex-start;
-    position: relative; /* Add this to establish a positioning context */
+    transition: max-height 0.5s ease-in-out;
 }
 
-.see-all-button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 1;
-}
-
-.assignment-box {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    overflow: auto;
-}
-
+/* Assignments */
 .assignment {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency */
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-    min-width: 250px; /* Minimum width for assignment boxes */
+    min-width: 250px;
+    flex: 0 0 auto; /* Prevent assignments from growing */
 }
 
 h2 {
