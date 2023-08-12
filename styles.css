@@ -33,22 +33,20 @@ body {
     margin: 0 auto;
 }
 
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8);
+nav {
+    background-color: transparent;
     padding: 1rem;
-    position: fixed;
+    text-align: left;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 2;
-    display: flex;
-    justify-content: flex-start;
+    z-index: 1;
+    padding: 1rem 2rem; /* Add padding to the nav */
 }
 
 .brand {
     font-size: 1.5rem;
     color: white;
-    padding-left: 1rem;
 }
 
 header {
@@ -74,26 +72,28 @@ main {
 
 .assignment-container {
     display: flex;
-    gap: 1rem;
-    width: calc(100% - 2rem); /* Reduce container width by padding */
-    max-height: calc(100vh - 6rem); /* Adjust height based on viewport */
     overflow-x: auto;
-    overflow-y: hidden;
-    background-color: rgba(0, 0, 0, 0.8); /* Less transparent background */
+    width: calc(100% + 2rem); /* Adjust the width */
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the background color */
+    backdrop-filter: blur(10px); /* Add blur effect */
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
-    transition: max-height 0.5s ease-in-out;
+    position: relative; /* Add position */
 }
 
-/* Assignments */
+.assignment-box {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
 .assignment {
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency */
+    background-color: rgba(255, 255, 255, 0.2); /* Adjust the background color */
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-    min-width: 250px;
-    flex: 0 0 auto; /* Prevent assignments from growing */
+    min-width: 250px; /* Minimum width for assignment boxes */
 }
 
 h2 {
@@ -134,7 +134,7 @@ p {
     margin-left: 1rem;
 }
 
-.see-all-button {
+.see-more-button {
     background-color: transparent;
     color: white;
     border: none;
@@ -142,15 +142,14 @@ p {
     font-size: 1rem;
     cursor: pointer;
     margin-bottom: 1rem;
-    align-self: flex-end;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
 }
 
 /* Rest of your CSS styles */
-
-/* Overlay animation styles */
-/* Rest of your existing styles */
-
-/* Overlay animation styles */
+/* Add this at the bottom of your styles.css file */
 .overlay {
     position: fixed;
     top: 0;
@@ -159,48 +158,24 @@ p {
     height: 100%;
     background-color: black;
     z-index: 9999;
-    animation: fadeOut 1s ease-in-out;
+    opacity: 1; /* Set initial opacity to 1 */
+    animation: fadeOut 1s ease-in-out forwards; /* Add forwards to retain the animation's end state */
 }
 
-/* Container for assignments */
 /* Rest of your existing styles */
 
-.assignment-container {
-    display: flex;
-    overflow-x: auto;
+/* Add this at the bottom of your styles.css file */
+.content-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    background-color: transparent;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
     border-radius: 8px;
-    margin-top: 1rem;
-    backdrop-filter: blur(8px); /* Add a blur effect to the container */
-    -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto;
 }
 
-.assignment-box {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: nowrap;
-    align-items: flex-start; /* Align items to the top */
-}
-
-.assignment {
-    background-color: rgba(255, 255, 255, 0.2); /* Off-white with transparency */
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    min-width: 250px; /* Minimum width for assignment boxes */
-}
-
-.see-more-button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem; /* Position the button at the top right */
-    z-index: 2; /* Place the button above assignments */
-}
