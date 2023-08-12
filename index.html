@@ -8,28 +8,25 @@
     <title>SchoologyX Dashboard</title>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="brand">SchoologyX</div>
+    </nav>
     <div class="overlay"></div>
-    <div class="content-wrapper">
-        <div class="container">
-            <nav>
-                <div class="brand">SchoologyX</div>
-            </nav>
-            <header>
-                <h1 id="greeting"></h1>
-            </header>
-            <main>
-                <section class="assignments">
-                    <h2>Assignments</h2>
-                    <div class="assignment-container">
-                        <button class="slider-button slider-button-left">&larr;</button>
-                        <div class="assignment-box">
-                            <!-- Assignments will be loaded dynamically through JavaScript -->
-                        </div>
-                        <button class="slider-button slider-button-right">&rarr;</button>
+    <div class="container">
+        <header>
+            <h1 id="greeting"></h1>
+        </header>
+        <main>
+            <section class="assignments">
+                <h2>Assignments</h2>
+                <div class="assignment-container">
+                    <button class="see-all-button">See All</button>
+                    <div class="assignment-box">
+                        <!-- Assignments will be loaded dynamically through JavaScript -->
                     </div>
-                </section>
-            </main>
-        </div>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
