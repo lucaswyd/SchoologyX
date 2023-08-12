@@ -11,13 +11,13 @@ const assignments = [
     // Add more assignments here
 ];
 
-// Get a reference to the assignment box and the slider buttons
-const assignmentBox = document.querySelector(".assignment-box");
+// Get a reference to the assignment container and the "See All" button
+const assignmentContainer = document.querySelector(".assignment-container");
 const seeAllButton = document.querySelector(".see-all-button");
 
 // Function to display the current assignment
 function displayAssignments() {
-    assignmentBox.innerHTML = assignments
+    assignmentContainer.innerHTML = assignments
         .map(
             assignment => `
                 <div class="assignment">
@@ -31,7 +31,7 @@ function displayAssignments() {
 
 // Event listener for the "See All" button
 seeAllButton.addEventListener("click", () => {
-    assignmentBox.classList.toggle("expanded");
+    assignmentContainer.classList.toggle("expanded");
 });
 
 // Initial display
