@@ -21,9 +21,12 @@ let currentIndex = 0;
 
 // Function to display all assignments
 function displayAssignments() {
+    console.log("Displaying assignments"); // Debug log
+
     assignmentBox.innerHTML = ''; // Clear existing assignments
 
     assignments.forEach((assignment) => {
+        console.log("Adding assignment:", assignment.name); // Debug log
         assignmentBox.innerHTML += `
             <div class="assignment">
                 <h3>${assignment.name}</h3>
@@ -32,6 +35,7 @@ function displayAssignments() {
         `;
     });
 }
+
 
 // Greetings based on time of day
 const currentHour = new Date().getHours();
