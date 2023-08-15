@@ -36,7 +36,6 @@ function displayAssignments() {
     });
 }
 
-
 // Greetings based on time of day
 const currentHour = new Date().getHours();
 let greeting = "";
