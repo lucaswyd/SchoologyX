@@ -73,19 +73,22 @@ main {
 .assignment-container {
     display: flex;
     overflow-x: auto;
-    width: calc(100% + 2rem); /* Adjust the width */
+    width: 100%; /* Change to 100% to fit within the available space */
+    max-width: 1200px; /* Add max-width to prevent it from extending too far */
     background-color: rgba(0, 0, 0, 0.3); /* Adjust the background color */
     backdrop-filter: blur(10px); /* Add blur effect */
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
     position: relative; /* Add position */
+    
 }
 
 .assignment-box {
     display: flex;
     gap: 1rem;
     flex-wrap: nowrap;
+    flex: 0 0 auto; /* Add flex properties to prevent items from growing */
 }
 
 .assignment {
