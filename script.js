@@ -67,7 +67,7 @@ leftButton.addEventListener("click", () => {
 // Initial display
 displayAssignments();
 
-// Event listener for the "See All" button
+// Event listener for the "See All" button EDIT
 seeMoreButton.addEventListener("click", () => {
     assignmentBox.style.flexWrap = "wrap"; // Adjust flex-wrap property to wrap assignments
 });
