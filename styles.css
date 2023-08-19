@@ -179,4 +179,7 @@ p {
     overflow-y: auto;
 }
 
-/* yo */
+/* Additional styles for the "See All" button */
+.see-more-button {
+    /* Adjust the styles for the "See All" button here */
+}
