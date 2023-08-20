@@ -82,7 +82,6 @@ function displayAssignmentOverlay(assignment) {
 
     assignmentDetails.innerHTML = `
         <h3>${assignment.name}</h3>
-        <p>${assignment.description}</p>
         <p>Due: ${assignment.dueDate}</p>
     `;
 
@@ -93,67 +92,6 @@ function displayAssignmentOverlay(assignment) {
         document.body.removeChild(overlay);
     });
 }
-
-// Get a reference to the assignment box and the slider buttons
-const assignmentBox = document.querySelector(".assignment-box");
-const leftButton = document.querySelector(".slider-button-left");
-const rightButton = document.querySelector(".slider-button-right");
-const seeMoreButton = document.querySelector(".see-more-button"); // Add reference to the "See All" button
-
-let currentIndex = 0;
-
-// Function to display all assignments
-function displayAssignments() {
-    console.log("Displaying assignments"); // Debug log
-
-    assignmentBox.innerHTML = ''; // Clear existing assignments
-
-    assignments.forEach((assignment) => {
-        console.log("Adding assignment:", assignment.name); // Debug log
-        assignmentBox.innerHTML += `
-            <div class="assignment">
-                <h3>${assignment.name}</h3>
-                <p>Due: ${assignment.dueDate}</p>
-            </div>
-        `;
-    });
-}
-
-// Greetings based on time of day
-const currentHour = new Date().getHours();
-let greeting = "";
-if (currentHour >= 0 && currentHour < 7) {
-    greeting = "Rise and Shine";
-} else if (currentHour >= 7 && currentHour < 12) {
-    greeting = "Good Morning";
-} else if (currentHour >= 12 && currentHour < 18) {
-    greeting = "Good Afternoon";
-} else {
-    greeting = "Good Evening";
-}
-
-// Display the greeting
-document.getElementById("greeting").textContent = `${greeting}, Lucas!`;
-
-// Event listener for the right button
-rightButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % assignments.length;
-    displayAssignments();
-});
-
-// Event listener for the left button
-leftButton.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + assignments.length) % assignments.length;
-    displayAssignments();
-});
-
-// Initial display
-displayAssignments();
-
-// Event listener for the "See All" button
-seeMoreButton.addEventListener("click", () => {
-    assignmentBox.style.flexWrap = "wrap"; // Adjust flex-wrap property to wrap assignments
-});
 
 // Event listener for assignment boxes
 assignmentBox.addEventListener("click", (event) => {
@@ -179,3 +117,4 @@ particlesJS("particles-js", {
     }
 });
 
+// Rest of your existing script.js content
