@@ -71,3 +71,17 @@ displayAssignments();
 seeMoreButton.addEventListener("click", () => {
     assignmentBox.style.flexWrap = "wrap"; // Adjust flex-wrap property to wrap assignments
 });
+
+// Your existing JavaScript code
+
+// Event listener for the "Login" button
+const loginButton = document.getElementById("login-button");
+loginButton.addEventListener("click", () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const launchLink = document.getElementById("launch-link").value;
+
+    // Perform actions with the provided credentials and launch link
+    // For demonstration purposes, you can display an alert
+    alert(`Username: ${username}\nPassword: ${password}\nLaunch Link: ${launchLink}`);
+});
