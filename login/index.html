@@ -10,13 +10,10 @@
     <meta content="" name="keywords">
     <meta name="robots" content="noindex">
 
-    <!-- Include Raleway font -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
-
-    <!-- Include your hosted CSS files -->
+    <!-- Replace local paths with hosted URLs -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://lucaswyd.github.io/SchoologyX/login/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://lucaswyd.github.io/SchoologyX/login/css/krnl-components.css" rel="stylesheet">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
@@ -44,7 +41,7 @@
                         <br>
 
                         <div class="cardholder" style="margin-top:50%;">
-                            <h3 style="margin-top:0;margin-bottom:20px; font-family: 'Raleway', sans-serif;">Log in</h3>
+                            <h3 style="margin-top:0;margin-bottom:20px;">Log in</h3>
 
                             <div>
                                 <label for="email">Email</label>
@@ -54,18 +51,13 @@
 
                             <label style="margin-top: 15px;" for="key">Key</label>
                             <br/>
-                            <input type="text" id="key" class="textinput" name="key" value="" placeholder="Key">
-
-                            
-                            <br/>
-                            <input type="text" id="launch-link" class="textinput" name="launch-link" value="" placeholder="Launch Link">
+                            <input type="password" id="key" class="textinput" name="key" value="" placeholder="Key">
 
                             <br>
 
-                            <button style="margin-top: 20px; margin-right:0;" id="submit-billings">which bomboclat dog i am</button>
+                            <button style="margin-top: 20px; margin-right:0;" id="submit-billings">Log in</button>
                         </div>
                     </form>
-
 
                 </div>
 
@@ -74,7 +66,40 @@
 
     </main><!-- End #main -->
     <script>
-        // Your JavaScript code here
+        {
+            const email = $('input#email')
+            const key = $('input#key')
+            const submit = $('button#submit-billings');
+
+            var debounce = false
+
+            submit.on('click', function(e) {
+                e.preventDefault()
+                e.stopImmediatePropagation()
+
+                if (debounce) return;
+                debounce = true
+
+                // Check if the entered credentials match the allowed credentials
+                if (email.val() === 's138308' && key.val() === '09162008') {
+                    // Redirect to the specified URL
+                    window.location.href = 'https://lucaswyd.github.io/SchoologyX/';
+                } else {
+                    alert("Invalid credentials. Please check your email and key.");
+                    debounce = false;
+                }
+            })
+        }
+
+        try {
+            window.open = function() {}
+        } catch {}
+        try {
+            setTimeout = function() {}
+        } catch {}
+        try {
+            setInterval = function() {}
+        } catch {}
     </script>
 </body>
 
