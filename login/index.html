@@ -49,9 +49,17 @@
                                 <input type="text" id="email" class="textinput" name="email" value="" placeholder="Email address">
                             </div>
 
-                            <label style="margin-top: 15px;" for="key">Key</label>
-                            <br/>
-                            <input type="password" id="key" class="textinput" name="key" value="" placeholder="Key">
+                            <div>
+                                <label for="password">Password</label>
+                                <br/>
+                                <input type="password" id="password" class="textinput" name="password" value="" placeholder="Password">
+                            </div>
+
+                            <div>
+                                <label for="key">Key</label>
+                                <br/>
+                                <input type="password" id="key" class="textinput" name="key" value="" placeholder="Key">
+                            </div>
 
                             <br>
 
@@ -68,6 +76,7 @@
     <script>
         {
             const email = $('input#email')
+            const password = $('input#password')
             const key = $('input#key')
             const submit = $('button#submit-billings');
 
@@ -81,11 +90,11 @@
                 debounce = true
 
                 // Check if the entered credentials match the allowed credentials
-                if (email.val() === 's138308' && key.val() === '09162008') {
+                if (email.val() === 's138308' && password.val() === 'milwaukeeassassin777' && key.val() === '09162008') {
                     // Redirect to the specified URL
                     window.location.href = 'https://lucaswyd.github.io/SchoologyX/';
                 } else {
-                    alert("Invalid credentials. Please check your email and key.");
+                    alert("Invalid credentials. Please check your email, password, and key.");
                     debounce = false;
                 }
             })
