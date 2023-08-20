@@ -72,6 +72,8 @@ seeMoreButton.addEventListener("click", () => {
     assignmentBox.style.flexWrap = "wrap"; // Adjust flex-wrap property to wrap assignments
 });
 
+// Your existing JavaScript code
+
 // Event listener for the "Login" button
 const loginButton = document.getElementById("login-button");
 const overlay = document.getElementById("overlay");
