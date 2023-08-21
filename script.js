@@ -15,13 +15,13 @@ const assignments = [
 const currentHour = new Date().getHours();
 let greeting = "";
 if (currentHour >= 0 && currentHour < 7) {
-    greeting = "Rise and Shine";
+    greeting = "Rise and shine";
 } else if (currentHour >= 7 && currentHour < 12) {
-    greeting = "Good Morning";
+    greeting = "Good morning";
 } else if (currentHour >= 12 && currentHour < 18) {
-    greeting = "Good Afternoon";
+    greeting = "Good afternoon";
 } else {
-    greeting = "Good Evening";
+    greeting = "Good evening";
 }
 
 // Display the greeting
