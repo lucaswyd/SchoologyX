@@ -74,7 +74,7 @@ main {
 .assignment-container {
     display: flex;
     overflow-x: auto;
-    width: calc(100% + 2rem); /* Adjust the width */
+    width: calc(95.6% + 2rem); /* Adjust the width */
     background-color: rgba(0, 0, 0, 0.3); /* Adjust the background color */
     backdrop-filter: blur(10px); /* Add blur effect */
     padding: 1rem;
