@@ -42,6 +42,28 @@ function displayAssignments() {
     });
 }
 
+// Get a reference to the assignment box and the slider buttons
+const assignmentBox = document.querySelector(".assignment-box");
+const leftButton = document.querySelector(".slider-button-left");
+const rightButton = document.querySelector(".slider-button-right");
+const seeMoreButton = document.querySelector(".see-more-button");
+
+let currentIndex = 0;
+
+// Event listeners for slider buttons
+rightButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % assignments.length;
+    displayAssignments();
+});
+
+leftButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + assignments.length) % assignments.length;
+    displayAssignments();
+});
+
+// Display initial assignments
+displayAssignments();
+
 // Rest of your event listeners and functions
 
 // Initialize Particle.js animation
