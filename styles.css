@@ -29,6 +29,11 @@ body {
     padding: 0;
 }
 
+
+::selection {
+  background: #4d345b; /* WebKit/Blink Browsers */
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -149,8 +154,8 @@ p {
     cursor: pointer;
     margin-bottom: 1rem;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 10.8rem;
+    right: 1.5rem;
     z-index: 2;
 }
 
