@@ -1,13 +1,13 @@
 // Sample assignment data
 const assignments = [
-    { name: "Math Assignment", dueDate: "August 15" },
-    { name: "Science Assignment", dueDate: "August 17" },
-    { name: "Spanish Assignment", dueDate: "August 19" },
-    { name: "English Assignment", dueDate: "August 20" },
-    { name: "History Assignment", dueDate: "August 21" },
-    { name: "Art Assignment", dueDate: "August 22" },
-    { name: "Cooking Assignment", dueDate: "August 23" },
-    { name: "Research Assignment", dueDate: "August 24" },
+    { name: "Math Assignment", dueDate: "August 24" },
+    { name: "Science Assignment", dueDate: "August 25" },
+    { name: "Spanish Assignment", dueDate: "August 26" },
+    { name: "English Assignment", dueDate: "August 27" },
+    { name: "History Assignment", dueDate: "August 28" },
+    { name: "Art Assignment", dueDate: "August 29" },
+    { name: "Cooking Assignment", dueDate: "August 30" },
+    { name: "Research Assignment", dueDate: "August 31" },
     // Add more assignments here
 ];
 
@@ -59,6 +59,41 @@ rightButton.addEventListener("click", () => {
 leftButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + assignments.length) % assignments.length;
     displayAssignments();
+});
+// Function to display assignment details overlay
+function displayAssignmentOverlay(assignment) {
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+
+    const detailsBox = document.createElement("div");
+    detailsBox.className = "assignment-details";
+
+    const closeButton = document.createElement("div");
+    closeButton.className = "close-button";
+    closeButton.textContent = "X";
+    closeButton.addEventListener("click", () => {
+        overlay.remove();
+    });
+
+    detailsBox.innerHTML = `
+        <h2>${assignment.name}</h2>
+        <p>Description: Description here</p>
+        <p>Due: ${assignment.dueDate}</p>
+    `;
+
+    detailsBox.appendChild(closeButton);
+    overlay.appendChild(detailsBox);
+    document.body.appendChild(overlay);
+}
+
+// Event listener for assignment boxes
+assignmentBox.addEventListener("click", (event) => {
+    const assignmentElement = event.target.closest(".assignment");
+    if (assignmentElement) {
+        const index = Array.from(assignmentElement.parentNode.children).indexOf(assignmentElement);
+        const assignment = assignments[index];
+        displayAssignmentOverlay(assignment);
+    }
 });
 
 // Display initial assignments
