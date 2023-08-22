@@ -101,6 +101,18 @@ displayAssignments();
 
 // Rest of your event listeners and functions
 
+// Your existing JavaScript code
+
+// Function to handle sign out
+function handleSignOut() {
+    // Add your sign out logic here
+}
+
+// Add event listener for sign out link
+const signOutLink = document.querySelector(".dropdown-content a");
+signOutLink.addEventListener("click", handleSignOut);
+
+
 // Initialize Particle.js animation
 particlesJS("particles-js", {
     particles: {
