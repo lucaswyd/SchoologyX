@@ -8,20 +8,6 @@
     <title>SchoologyX Dashboard</title>
 </head>
 <body>
-    <nav>
-        <div class="brand">SchoologyX</div>
-        <div class="nav-links">
-            <a href="#">Courses</a>
-            <a href="#">Assignments</a>
-            <a href="#">Music</a>
-            <div class="user-dropdown">
-                <div class="user-icon">User Icon</div>
-                <div class="dropdown-content">
-                    <a href="#" id="sign-out-link">Sign Out</a>
-                </div>
-            </div>
-        </div>
-    </nav>
     <header>
         <h1 id="greeting"></h1>
     </header>
@@ -38,6 +24,15 @@
             <button class="see-more-button">See All</button>
         </section>
     </main>
+
+    <!-- Add the dock bar -->
+    <div class="dock">
+        <div class="dock-tab active" id="home-tab">Home</div>
+        <div class="dock-tab" id="courses-tab">Courses</div>
+        <div class="dock-tab" id="music-tab">Music</div>
+        <div class="dock-tab" id="settings-tab">Settings</div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
