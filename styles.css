@@ -50,6 +50,26 @@ nav {
     padding: 1rem 2rem; /* Add padding to the nav */
 }
 
+/* ... Your existing styles ... */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ... Your existing styles ... */
+
 .brand {
     font-size: 1.5rem;
     color: white;
