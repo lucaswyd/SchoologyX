@@ -99,21 +99,29 @@ assignmentBox.addEventListener("click", (event) => {
 // Display initial assignments
 displayAssignments();
 
-// Rest of your event listeners and functions
+// Add event listeners to handle tab clicks
+const homeTab = document.getElementById("home-tab");
+const coursesTab = document.getElementById("courses-tab");
+const musicTab = document.getElementById("music-tab");
+const settingsTab = document.getElementById("settings-tab");
 
-// Your existing JavaScript code
+homeTab.addEventListener("click", () => {
+    // Handle home tab click
+});
 
-// Function to handle sign out
-function handleSignOut() {
-    // Add your sign out logic here
-}
+coursesTab.addEventListener("click", () => {
+    // Handle courses tab click
+});
 
-// Add event listener for sign out link
-const signOutLink = document.querySelector(".dropdown-content a");
-signOutLink.addEventListener("click", handleSignOut);
+musicTab.addEventListener("click", () => {
+    // Handle music tab click
+});
 
+settingsTab.addEventListener("click", () => {
+    // Handle settings tab click
+});
 
-// Initialize Particle.js animation hHrhshshd
+// Initialize Particle.js animation
 particlesJS("particles-js", {
     particles: {
         number: {
