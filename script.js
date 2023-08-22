@@ -113,7 +113,7 @@ const signOutLink = document.querySelector(".dropdown-content a");
 signOutLink.addEventListener("click", handleSignOut);
 
 
-// Initialize Particle.js animation
+// Initialize Particle.js animation hHrhshshd
 particlesJS("particles-js", {
     particles: {
         number: {
