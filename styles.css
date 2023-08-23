@@ -52,26 +52,33 @@ nav {
 
 /* ... Your existing styles ... */
 
-.dock {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+dock {
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    z-index: 999;
+    padding: 0.5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
-.dock-tab {
-    padding: 0.5rem 1.5rem;
+.dock-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.dock-button {
     color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-.dock-tab.active {
+.dock-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
