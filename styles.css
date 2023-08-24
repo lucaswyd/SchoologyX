@@ -19,6 +19,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Helvetica Neue Medium";
+    src: url("fonts/helveticaneuemedium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: "Raleway", Arial, sans-serif;
     background-image: url('https://lucaswyd.github.io/SchoologyX/assets/background-krnlblur.jpg');
@@ -55,6 +62,7 @@ nav {
 /* ... Your existing styles ... */
 
 .menu-bar {
+    font-family: "Helvetica Neue Medium", Arial, sans-serif; /* Use the custom font */
     background-color: rgba(0, 0, 0, 0.8); /* Background color with transparency */
     backdrop-filter: blur(10px); /* Add blur effect */
     height: 26px;
@@ -71,6 +79,7 @@ nav {
 }
 
 .menu-bar-button {
+    font-family: "Helvetica Neue Medium", Arial, sans-serif; /* Use the custom font */
     color: #FFFFFF;
     text-decoration: none;
     padding: 0 12px;
