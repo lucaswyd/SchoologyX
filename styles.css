@@ -20,8 +20,8 @@
 }
 
 @font-face {
-    font-family: "Helvetica Neue Medium";
-    src: url("fonts/helveticaneuemedium.ttf") format("truetype");
+    font-family: "SF Pro Display Medium";
+    src: url("fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
@@ -62,8 +62,8 @@ nav {
 /* ... Your existing styles ... */
 
 .menu-bar {
-    font-family: "Helvetica Neue Medium", Arial, sans-serif; /* Use the custom font */
-    background-color: rgba(0, 0, 0, 0.8); /* Background color with transparency */
+    font-family: "SF Pro Display Medium", Arial, sans-serif; /* Use the custom font */
+    background-color: rgba(0, 0, 0, .5); /* Background color with transparency */
     backdrop-filter: blur(10px); /* Add blur effect */
     height: 26px;
     display: flex;
@@ -79,10 +79,11 @@ nav {
 }
 
 .menu-bar-button {
-    font-family: "Helvetica Neue Medium", Arial, sans-serif; /* Use the custom font */
+    opacity: 1.0;
+    font-family: "SF Pro Display Medium", Arial, sans-serif; /* Use the custom font */
     color: #FFFFFF;
     text-decoration: none;
-    padding: 0 12px;
+    padding: 0 10px;
     line-height: 0px;
     border-right: 1px solid #ccc;
     transition: background-color 0.3s;
