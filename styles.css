@@ -78,6 +78,18 @@ nav {
     -webkit-app-region: drag; /* Allows dragging the window on the menu bar */
 }
 
+.menu-bar-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.menu-logo {
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
+}
+
 .menu-bar-button {
     opacity: 1.0;
     font-family: "SF Pro Display Medium", Arial, sans-serif; /* Use the custom font */
