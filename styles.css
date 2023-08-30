@@ -36,15 +36,6 @@ body {
     padding: 0;
 }
 
-@keyframes reveal {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(2);
-        background-color: rgba(0, 0, 0, 0);
-    }
-}
 
 ::selection {
   background: #4d345b; /* WebKit/Blink Browsers */
@@ -61,6 +52,17 @@ body {
     z-index: 9999;
     pointer-events: none;
 }
+
+@keyframes reveal {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(2);
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
 
 .container {
     max-width: 1200px;
