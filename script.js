@@ -149,3 +149,13 @@ particlesJS("particles-js", {
         // Add more particle configuration options here
     }
 });
+
+// Add this code at the end of your script.js file
+
+// Trigger the fade-in animation on page load
+window.addEventListener("load", () => {
+    const revealAnimation = document.querySelector(".reveal-animation");
+    if (revealAnimation) {
+        revealAnimation.style.animationPlayState = "running";
+    }
+});
