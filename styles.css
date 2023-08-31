@@ -396,11 +396,11 @@ p {
 
 /* Example cursor definitions for different elements */
 body {
-    cursor: url('cursors/default@2x.png'), auto;
+    cursor: url('cursors/default.png'), auto;
 }
 
 a, button {
-    cursor: url('path-to-pointer-cursor.png'), pointer;
+    cursor: url('cursors/pointer.png'), pointer;
 }
 
 input, textarea {
