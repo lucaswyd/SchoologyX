@@ -396,7 +396,7 @@ p {
 
 /* Example cursor definitions for different elements */
 body {
-    cursor: url('path-to-default-cursor.png'), auto;
+    cursor: url('cursors/default@2x.png'), auto;
 }
 
 a, button {
