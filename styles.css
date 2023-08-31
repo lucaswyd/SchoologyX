@@ -394,4 +394,19 @@ p {
     pointer-events: none;
 }
 
+/* Example cursor definitions for different elements */
+body {
+    cursor: url('path-to-default-cursor.png'), auto;
+}
+
+a, button {
+    cursor: url('path-to-pointer-cursor.png'), pointer;
+}
+
+input, textarea {
+    cursor: url('path-to-text-input-cursor.png'), text;
+}
+
+/* Add more cursor definitions as needed */
+
 /* h */
