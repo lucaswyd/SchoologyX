@@ -221,7 +221,6 @@ main {
 
 .assignments {
     margin-top: 2rem;
-    cursor: pointer;
 }
 
 .assignment-container {
@@ -240,6 +239,7 @@ main {
     display: flex;
     gap: 1rem;
     flex-wrap: nowrap;
+    cursor: pointer;
 }
 
 .assignment {
@@ -250,6 +250,7 @@ main {
     min-width: 250px; /* Minimum width for assignment boxes */
     /* Add transition for smooth animation */
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .assignment:hover {
