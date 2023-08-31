@@ -247,11 +247,12 @@ main {
     border-radius: 8px;
     margin-bottom: 1rem;
     min-width: 250px; /* Minimum width for assignment boxes */
+    /* Add transition for smooth animation */
+    transition: transform 0.3s ease;
 }
 
 .assignment:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease;
 }
 
 h2 {
