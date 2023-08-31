@@ -221,6 +221,7 @@ main {
 
 .assignments {
     margin-top: 2rem;
+    cursor: pointer;
 }
 
 .assignment-container {
