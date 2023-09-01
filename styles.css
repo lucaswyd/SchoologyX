@@ -29,41 +29,15 @@
 body {
     font-family: "Raleway", Arial, sans-serif;
     background-image: url('https://lucaswyd.github.io/SchoologyX/assets/background-krnlblur.jpg');
-    /* https://cdn.discordapp.com/attachments/671694363235057675/967830744355454986/unknown.png */
     background-size: cover;
     color: white;
     margin: 0;
     padding: 0;
 }
 
-
 ::selection {
-  background: #4d345b; /* WebKit/Blink Browsers */
+  background: #4d345b;
 }
-
-/* Add these new CSS rules */
-.reveal-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    animation: fade-in 2s ease-in-out forwards;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0; /* Start with 0 opacity */
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 
 .container {
     max-width: 1200px;
@@ -78,7 +52,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 1;
-    padding: 1rem 2rem; /* Add padding to the nav */
+    padding: 1rem 2rem;
 }
 
 /* ... Your existing styles ... */
@@ -86,9 +60,9 @@ nav {
 /* ... Your existing styles ... */
 
 .menu-bar {
-    font-family: "SF Pro Display Medium", Arial, sans-serif; /* Use the custom font */
-    background-color: rgba(0, 0, 0, .5); /* Background color with transparency */
-    backdrop-filter: blur(10px); /* Add blur effect */
+    font-family: "SF Pro Display Medium", Arial, sans-serif;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
     height: 26px;
     display: flex;
     justify-content: flex-start;
@@ -99,25 +73,7 @@ nav {
     left: 0;
     width: 100%;
     z-index: 100;
-    -webkit-app-region: drag; /* Allows dragging the window on the menu bar */
-}
-
-.clock {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 16px;
-    color: white;
-    font-family: "SF Pro Display Medium", Arial, sans-serif;
-}
-
-.time {
-    font-size: 1rem;
-    margin-right: 8px;
-}
-
-.date {
-    font-size: 0.8rem;
+    -webkit-app-region: drag;
 }
 
 .menu-bar-logo {
@@ -128,13 +84,13 @@ nav {
 }
 
 .menu-logo {
-    width: 24px; /* Adjust the width as needed */
-    height: 24px; /* Adjust the height as needed */
+    width: 24px;
+    height: 24px;
 }
 
 .menu-bar-button {
     opacity: 1.0;
-    font-family: "SF Pro Display Medium", Arial, sans-serif; /* Use the custom font */
+    font-family: "SF Pro Display Medium", Arial, sans-serif;
     color: #FFFFFF;
     text-decoration: none;
     padding: 0 10px;
@@ -212,7 +168,6 @@ dock {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-
 /* ... Your existing styles ... */
 
 .brand {
@@ -244,20 +199,19 @@ main {
 .assignment-container {
     display: flex;
     overflow-x: auto;
-    width: calc(95.6% + 2rem); /* Adjust the width */
-    background-color: rgba(0, 0, 0, 0.3); /* Adjust the background color */
-    backdrop-filter: blur(10px); /* Add blur effect */
+    width: calc(95.6% + 2rem);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
-    position: relative; /* Add position */
+    position: relative;
 }
 
 .assignment-box {
     display: flex;
     gap: 1rem;
     flex-wrap: nowrap;
-    cursor: pointer;
 }
 
 .assignment {
@@ -267,16 +221,11 @@ main {
     margin-bottom: 1rem;
     min-width: 250px;
     transition: transform 0.3s ease;
-    cursor: url('cursors/pointer.png'), pointer;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    color: white;
+    cursor: pointer;
 }
 
 .assignment:hover {
     transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.3);
 }
 
 h2 {
@@ -331,16 +280,13 @@ p {
     z-index: 2;
 }
 
-/* ... Your existing styles ... */
-
-/* New styles for fullscreen overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,34 +294,15 @@ p {
 }
 
 .assignment-details {
-    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 2rem;
+    border-radius: 8px;
     text-align: center;
-    border-radius: 0; /* Remove border radius */
+    max-width: 70%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     position: relative;
-    width: 100%;
-    height: 100%;
 }
-
-.assignment-details h2 {
-    font-size: 2.5rem; /* Larger title */
-    text-align: right; /* Right-aligned title */
-    margin-top: 1rem;
-}
-
-.assignment-details p {
-    font-size: 1.5rem; /* Smaller description */
-    text-align: center;
-    margin-top: 1rem;
-}
-
-/* Custom cursor for assignment boxes */
-.assignment-button {
-    cursor: url('cursors/pointer.png'), pointer;
-}
-
-/* ... Your existing styles ... */
 
 .close-button {
     position: absolute;
@@ -385,8 +312,6 @@ p {
     color: white;
     cursor: pointer;
 }
-
-/* Your existing styles */
 
 .user-dropdown {
     position: absolute;
@@ -428,8 +353,6 @@ p {
     background-color: #f1f1f1;
 }
 
-
-/* Add this at the bottom of your styles.css file */
 #particles-js {
     position: absolute;
     top: 0;
@@ -439,9 +362,8 @@ p {
     pointer-events: none;
 }
 
-/* Example cursor definitions for different elements */
 body {
-    cursor: url('cursors/default.png'), auto;
+    cursor: url('cursors/pointer.png'), pointer;
 }
 
 a, button {
@@ -449,9 +371,5 @@ a, button {
 }
 
 input, textarea {
-    cursor: url('path-to-text-input-cursor.png'), text;
+    cursor: url('cursors/pointer.png'), pointer;
 }
-
-/* Add more cursor definitions as needed */
-
-/* h */
