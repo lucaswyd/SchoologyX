@@ -86,19 +86,25 @@ function displayAssignmentOverlay(assignment) {
     const closeButton = document.createElement("div");
     closeButton.className = "close-button";
     closeButton.textContent = "X";
+
+    // Add a click event listener to close the overlay
     closeButton.addEventListener("click", () => {
-        overlay.remove();
+        overlay.style.opacity = 0; // Set opacity to 0 to trigger the transition
+        setTimeout(() => {
+            overlay.remove(); // Remove the overlay after the transition
+        }, 300); // Adjust the time to match the transition duration
     });
 
-    detailsBox.innerHTML = `
-        <h2>${assignment.name}</h2>
-        <p>Description: Description here</p>
-        <p>Due: ${assignment.dueDate}</p>
-    `;
+    // Rest of your assignment details content
 
     detailsBox.appendChild(closeButton);
     overlay.appendChild(detailsBox);
     document.body.appendChild(overlay);
+
+    // Trigger the opacity change for the overlay
+    setTimeout(() => {
+        overlay.style.opacity = 1;
+    }, 0);
 }
 
 // Event listener for assignment boxes
