@@ -243,7 +243,6 @@ main {
 }
 
 .assignment {
-    cursor: url('fonts/pointer.png'), pointer;
     background-color: rgba(255, 255, 255, 0.2); /* Adjust the background color */
     padding: 1rem;
     border-radius: 8px;
@@ -251,10 +250,16 @@ main {
     min-width: 250px; /* Minimum width for assignment boxes */
     /* Add transition for smooth animation */
     transition: transform 0.3s ease;
+    cursor: url('path-to-your-custom-cursor.png'), pointer; /* Add your custom cursor path here */
+    display: inline-block; /* Display as inline-block to behave like buttons */
+    text-align: center; /* Center text horizontally */
+    text-decoration: none; /* Remove underlines */
+    color: white;
 }
 
 .assignment:hover {
     transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.3); /* Adjust background color on hover */
 }
 
 h2 {
@@ -309,13 +314,16 @@ p {
     z-index: 2;
 }
 
+/* ... Your existing styles ... */
+
+/* New styles for fullscreen overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,15 +331,34 @@ p {
 }
 
 .assignment-details {
-    background-color: rgba(0, 0, 0, 0.8); /* Revert background color */
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
     color: white;
     padding: 2rem;
-    border-radius: 8px; /* Re-add border-radius */
     text-align: center;
-    max-width: 70%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0; /* Remove border radius */
     position: relative;
+    width: 100%;
+    height: 100%;
 }
+
+.assignment-details h2 {
+    font-size: 2.5rem; /* Larger title */
+    text-align: right; /* Right-aligned title */
+    margin-top: 1rem;
+}
+
+.assignment-details p {
+    font-size: 1.5rem; /* Smaller description */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Custom cursor for assignment boxes */
+.assignment-button {
+    cursor: url('cursors/pointer.png'), pointer;
+}
+
+/* ... Your existing styles ... */
 
 .close-button {
     position: absolute;
