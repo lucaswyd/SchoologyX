@@ -243,6 +243,7 @@ main {
 }
 
 .assignment {
+    cursor: pointer;
     background-color: rgba(255, 255, 255, 0.2); /* Adjust the background color */
     padding: 1rem;
     border-radius: 8px;
@@ -250,7 +251,6 @@ main {
     min-width: 250px; /* Minimum width for assignment boxes */
     /* Add transition for smooth animation */
     transition: transform 0.3s ease;
-    cursor: pointer;
 }
 
 .assignment:hover {
@@ -309,29 +309,29 @@ p {
     z-index: 2;
 }
 
-/* Add this at the bottom of your styles.css file */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px); /* Add blur effect */
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.8); /* Change background color for overlay */
 }
 
 .assignment-details {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9); /* Change background color for details box */
     color: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 0; /* Remove border-radius to make it full-screen */
     text-align: center;
-    max-width: 70%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    position: relative; /* Add position */
+    max-width: 100%; /* Adjust the maximum width */
+    box-shadow: none; /* Remove box shadow */
+    position: relative;
 }
 
 .close-button {
