@@ -29,15 +29,41 @@
 body {
     font-family: "Raleway", Arial, sans-serif;
     background-image: url('https://lucaswyd.github.io/SchoologyX/assets/background-krnlblur.jpg');
+    /* https://cdn.discordapp.com/attachments/671694363235057675/967830744355454986/unknown.png */
     background-size: cover;
     color: white;
     margin: 0;
     padding: 0;
 }
 
+
 ::selection {
-  background: #4d345b;
+  background: #4d345b; /* WebKit/Blink Browsers */
 }
+
+/* Add these new CSS rules */
+.reveal-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    animation: fade-in 2s ease-in-out forwards;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0; /* Start with 0 opacity */
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .container {
     max-width: 1200px;
@@ -52,7 +78,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 1;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem; /* Add padding to the nav */
 }
 
 /* ... Your existing styles ... */
@@ -60,9 +86,9 @@ nav {
 /* ... Your existing styles ... */
 
 .menu-bar {
-    font-family: "SF Pro Display Medium", Arial, sans-serif;
-    background-color: rgba(0, 0, 0, .5);
-    backdrop-filter: blur(10px);
+    font-family: "SF Pro Display Medium", Arial, sans-serif; /* Use the custom font */
+    background-color: rgba(0, 0, 0, .5); /* Background color with transparency */
+    backdrop-filter: blur(10px); /* Add blur effect */
     height: 26px;
     display: flex;
     justify-content: flex-start;
@@ -73,7 +99,7 @@ nav {
     left: 0;
     width: 100%;
     z-index: 100;
-    -webkit-app-region: drag;
+    -webkit-app-region: drag; /* Allows dragging the window on the menu bar */
 }
 
 .menu-bar-logo {
@@ -84,13 +110,13 @@ nav {
 }
 
 .menu-logo {
-    width: 24px;
-    height: 24px;
+    width: 24px; /* Adjust the width as needed */
+    height: 24px; /* Adjust the height as needed */
 }
 
 .menu-bar-button {
     opacity: 1.0;
-    font-family: "SF Pro Display Medium", Arial, sans-serif;
+    font-family: "SF Pro Display Medium", Arial, sans-serif; /* Use the custom font */
     color: #FFFFFF;
     text-decoration: none;
     padding: 0 10px;
@@ -168,6 +194,7 @@ dock {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+
 /* ... Your existing styles ... */
 
 .brand {
@@ -199,33 +226,40 @@ main {
 .assignment-container {
     display: flex;
     overflow-x: auto;
-    width: calc(95.6% + 2rem);
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    width: calc(95.6% + 2rem); /* Adjust the width */
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the background color */
+    backdrop-filter: blur(10px); /* Add blur effect */
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
-    position: relative;
+    position: relative; /* Add position */
 }
 
 .assignment-box {
     display: flex;
     gap: 1rem;
     flex-wrap: nowrap;
+    cursor: pointer;
 }
 
 .assignment {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2); /* Adjust the background color */
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-    min-width: 250px;
+    min-width: 250px; /* Minimum width for assignment boxes */
+    /* Add transition for smooth animation */
     transition: transform 0.3s ease;
-    cursor: pointer;
+    cursor: url('path-to-your-custom-cursor.png'), pointer; /* Add your custom cursor path here */
+    display: inline-block; /* Display as inline-block to behave like buttons */
+    text-align: center; /* Center text horizontally */
+    text-decoration: none; /* Remove underlines */
+    color: white;
 }
 
 .assignment:hover {
     transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.3); /* Adjust background color on hover */
 }
 
 h2 {
@@ -280,13 +314,16 @@ p {
     z-index: 2;
 }
 
+/* ... Your existing styles ... */
+
+/* New styles for fullscreen overlay */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,23 +331,34 @@ p {
 }
 
 .assignment-details {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
     color: white;
     padding: 2rem;
-    border-radius: 8px;
-    text-align: left; /* Align details to the left */
-    max-width: 70%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 0; /* Remove border radius */
     position: relative;
-    opacity: 0; /* Start with 0 opacity for animation */
-    transform: translateY(20px); /* Start with a slight translation for animation */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    height: 100%;
 }
 
-.overlay.active .assignment-details {
-    opacity: 1; /* Show with animation */
-    transform: translateY(0); /* Show with animation */
+.assignment-details h2 {
+    font-size: 2.5rem; /* Larger title */
+    text-align: right; /* Right-aligned title */
+    margin-top: 1rem;
 }
+
+.assignment-details p {
+    font-size: 1.5rem; /* Smaller description */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Custom cursor for assignment boxes */
+.assignment-button {
+    cursor: url('cursors/pointer.png'), pointer;
+}
+
+/* ... Your existing styles ... */
 
 .close-button {
     position: absolute;
@@ -320,6 +368,8 @@ p {
     color: white;
     cursor: pointer;
 }
+
+/* Your existing styles */
 
 .user-dropdown {
     position: absolute;
@@ -361,6 +411,8 @@ p {
     background-color: #f1f1f1;
 }
 
+
+/* Add this at the bottom of your styles.css file */
 #particles-js {
     position: absolute;
     top: 0;
@@ -370,8 +422,9 @@ p {
     pointer-events: none;
 }
 
+/* Example cursor definitions for different elements */
 body {
-    cursor: url('cursors/pointer.png'), pointer;
+    cursor: url('cursors/default.png'), auto;
 }
 
 a, button {
@@ -379,5 +432,9 @@ a, button {
 }
 
 input, textarea {
-    cursor: url('cursors/pointer.png'), pointer;
+    cursor: url('path-to-text-input-cursor.png'), text;
 }
+
+/* Add more cursor definitions as needed */
+
+/* h */
