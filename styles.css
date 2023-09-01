@@ -102,6 +102,24 @@ nav {
     -webkit-app-region: drag; /* Allows dragging the window on the menu bar */
 }
 
+.clock {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 16px;
+    color: white;
+    font-family: "SF Pro Display Medium", Arial, sans-serif;
+}
+
+.time {
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+.date {
+    font-size: 0.8rem;
+}
+
 .menu-bar-logo {
     display: flex;
     align-items: center;
@@ -243,23 +261,22 @@ main {
 }
 
 .assignment {
-    background-color: rgba(255, 255, 255, 0.2); /* Adjust the background color */
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
-    min-width: 250px; /* Minimum width for assignment boxes */
-    /* Add transition for smooth animation */
+    min-width: 250px;
     transition: transform 0.3s ease;
-    cursor: url('path-to-your-custom-cursor.png'), pointer; /* Add your custom cursor path here */
-    display: inline-block; /* Display as inline-block to behave like buttons */
-    text-align: center; /* Center text horizontally */
-    text-decoration: none; /* Remove underlines */
+    cursor: url('cursors/pointer.png'), pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
     color: white;
 }
 
 .assignment:hover {
     transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.3); /* Adjust background color on hover */
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 h2 {
