@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="https://lucaswyd.github.io/wordsearch/WordSearchX.png">
 </head>
 <body>
-    <div class="reveal-animation"></div> <!-- New element for animation -->
+    <div class="reveal-animation"></div>
     <nav class="menu-bar">
         <a href="" class="menu-bar-logo">
             <img src="https://lucaswyd.github.io/wordsearch/WordSearchX.png" alt="x." class="menu-logo">
@@ -20,7 +20,8 @@
         <a href="music" class="menu-bar-button">Music</a>
         <a href="#" class="menu-bar-button">Settings</a>
         <div class="clock">
-            <div id="clock" class="clock-text"></div>
+            <div id="time" class="time"></div>
+            <div id="date" class="date"></div>
         </div>
     </nav>
     <header>
@@ -30,12 +31,14 @@
         <section class="assignments">
             <h2>Assignments</h2>
             <div class="assignment-container">
+                <div class="slider-button slider-button-left">&lt;</div>
+                <div class="slider-button slider-button-right">&gt;</div>
                 <!-- Assignments will be loaded dynamically through JavaScript -->
             </div>
             <button class="see-more-button">See All</button>
         </section>
     </main>
-    <button id="fullscreen-button">Go Full Screen</button> <!-- Button for full screen -->
+    <button id="fullscreen-button">Go Full Screen</button>
     <script src="script.js"></script>
 </body>
 </html>
