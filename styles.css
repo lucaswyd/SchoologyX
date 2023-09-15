@@ -162,6 +162,17 @@ nav {
     display: block;
 }
 
+
+/* CSS for the "Music" dropdown */
+.music-dropdown {
+    display: none;
+    /* Add other styling for the dropdown here */
+}
+
+.menu-bar-button:hover + .music-dropdown,
+.music-dropdown:hover {
+    display: block;
+}
 /* ... Your existing styles ... */
 
 dock {
