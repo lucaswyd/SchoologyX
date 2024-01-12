@@ -28,6 +28,7 @@ async function fetchAssignments() {
 
         if (response.ok) {
             const data = await response.json();
+            console.log(data)
             return data.assignments || [];
         } else {
             console.error('Failed to fetch assignments:', response.statusText);
