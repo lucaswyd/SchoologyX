@@ -13,18 +13,88 @@ fullscreenButton.addEventListener("click", () => {
     }
 });
 
-// Sample assignment data
-const assignments = [
-    { name: "Math Assignment", dueDate: "August 24" },
-    { name: "Science Assignment", dueDate: "August 25" },
-    { name: "Spanish Assignment", dueDate: "August 26" },
-    { name: "English Assignment", dueDate: "August 27" },
-    { name: "History Assignment", dueDate: "August 28" },
-    { name: "Art Assignment", dueDate: "August 29" },
-    { name: "Cooking Assignment", dueDate: "August 30" },
-    { name: "Research Assignment", dueDate: "August 31" },
-    // Add more assignments here
-];
+// Add this function to fetch assignments
+async function fetchAssignments() {
+    const sectionId = '16-03'; // Replace with the actual section ID
+
+    try {
+        const response = await fetch(`https://api.schoology.com/v1/sections/${sectionId}/assignments`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ba7da6c282e0c4664e7f5235d58b8e50061ef0aed', // Replace with your Schoology API key
+            },
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            return data.assignments || [];
+        } else {
+            console.error('Failed to fetch assignments:', response.statusText);
+            return [];
+        }
+    } catch (error) {
+        console.error('Error fetching assignments:', error.message);
+        return [];
+    }
+}
+
+// Replace the sample assignments with the fetched data
+async function displayAssignments() {
+    assignmentBox.innerHTML = '';
+
+    const assignments = await fetchAssignments();
+
+    assignments.forEach((assignment) => {
+        assignmentBox.innerHTML += `
+            <div class="assignment">
+                <h3>${title}</h3>
+                <p>Description: ${description}</p>
+                <p>Due: ${due}</p>
+            </div>
+        `;
+    });
+}
+
+// Add the section ID in fetchAssignments function
+async function displayAssignmentOverlay(assignment) {
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+
+    const detailsBox = document.createElement("div");
+    detailsBox.className = "assignment-details";
+
+    const closeButton = document.createElement("div");
+    closeButton.className = "close-button";
+    closeButton.textContent = "X";
+    closeButton.addEventListener("click", () => {
+        overlay.remove();
+    });
+
+    detailsBox.innerHTML = `
+        <h2>${assignment.title}</h2>
+        <p>Description: ${assignment.description}</p>
+        <p>Due: ${assignment.due}</p>
+    `;
+
+    detailsBox.appendChild(closeButton);
+    overlay.appendChild(detailsBox);
+    document.body.appendChild(overlay);
+}
+
+// Event listener for assignment boxes
+assignmentBox.addEventListener("click", async (event) => {
+    const assignmentElement = event.target.closest(".assignment");
+    if (assignmentElement) {
+        const index = Array.from(assignmentElement.parentNode.children).indexOf(assignmentElement);
+        const assignments = await fetchAssignments();
+        const assignment = assignments[index];
+        displayAssignmentOverlay(assignment);
+    }
+});
+
+// Display initial assignments
+displayAssignments();
 
 // Greetings based on time of day
 const currentHour = new Date().getHours();
@@ -43,15 +113,17 @@ if (currentHour >= 0 && currentHour < 7) {
 document.getElementById("greeting").textContent = `${greeting}, Lucas!`;
 
 // Function to display all assignments
-function displayAssignments() {
+async function displayAssignments() {
     assignmentBox.innerHTML = ''; // Clear existing assignments
+
+    const assignments = await fetchAssignments();
 
     assignments.forEach((assignment) => {
         assignmentBox.innerHTML += `
             <div class="assignment">
-                <h3>${assignment.name}</h3>
-                <p>Description: Description here</p>
-                <p>Due: ${assignment.dueDate}</p>
+                <h3>${assignment.title}</h3>
+                <p>Description: ${assignment.description}</p>
+                <p>Due: ${assignment.due}</p>
             </div>
         `;
     });
@@ -111,8 +183,6 @@ assignmentBox.addEventListener("click", (event) => {
     }
 });
 
-// Display initial assignments
-displayAssignments();
 
 // Add event listeners to handle tab clicks
 const homeTab = document.getElementById("home-tab");
