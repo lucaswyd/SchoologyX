@@ -15,10 +15,10 @@ fullscreenButton.addEventListener("click", () => {
 
 // Add this function to fetch assignments
 async function fetchAssignments() {
-    const sectionId = '16-03'; // Replace with the actual section ID
+    const sectionId = '17-06'; // Replace with the actual section ID
 
     try {
-        const response = await fetch(`https://api.schoology.com/v1/sections/${sectionId}/assignments`, {
+        const response = await fetch(`https://api.schoology.com/v1/sections/${7-06}/assignments`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ async function fetchAssignments() {
 
         if (response.ok) {
             const data = await response.json();
-            console.log(data)
+            console.log(data);
             return data.assignments || [];
         } else {
             console.error('Failed to fetch assignments:', response.statusText);
@@ -73,9 +73,9 @@ async function displayAssignmentOverlay(assignment) {
     });
 
     detailsBox.innerHTML = `
-        <h2>${assignment.title}</h2>
-        <p>Description: ${assignment.description}</p>
-        <p>Due: ${assignment.due}</p>
+        <h2>${title}</h2>
+        <p>Description: ${description}</p>
+        <p>Due: ${due}</p>
     `;
 
     detailsBox.appendChild(closeButton);
@@ -94,9 +94,6 @@ assignmentBox.addEventListener("click", async (event) => {
     }
 });
 
-// Display initial assignments
-displayAssignments();
-
 // Greetings based on time of day
 const currentHour = new Date().getHours();
 let greeting = "";
@@ -112,23 +109,6 @@ if (currentHour >= 0 && currentHour < 7) {
 
 // Display the greeting
 document.getElementById("greeting").textContent = `${greeting}, Lucas!`;
-
-// Function to display all assignments
-async function displayAssignments() {
-    assignmentBox.innerHTML = ''; // Clear existing assignments
-
-    const assignments = await fetchAssignments();
-
-    assignments.forEach((assignment) => {
-        assignmentBox.innerHTML += `
-            <div class="assignment">
-                <h3>${assignment.title}</h3>
-                <p>Description: ${assignment.description}</p>
-                <p>Due: ${assignment.due}</p>
-            </div>
-        `;
-    });
-}
 
 // Get a reference to the assignment box and the slider buttons
 const assignmentBox = document.querySelector(".assignment-box");
@@ -148,6 +128,7 @@ leftButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + assignments.length) % assignments.length;
     displayAssignments();
 });
+
 // Function to display assignment details overlay
 function displayAssignmentOverlay(assignment) {
     const overlay = document.createElement("div");
@@ -164,9 +145,9 @@ function displayAssignmentOverlay(assignment) {
     });
 
     detailsBox.innerHTML = `
-        <h2>${assignment.name}</h2>
-        <p>Description: Description here</p>
-        <p>Due: ${assignment.dueDate}</p>
+        <h2>${title}</h2>
+        <p>Description: ${description}</p>
+        <p>Due: ${due}</p>
     `;
 
     detailsBox.appendChild(closeButton);
@@ -183,7 +164,6 @@ assignmentBox.addEventListener("click", (event) => {
         displayAssignmentOverlay(assignment);
     }
 });
-
 
 // Add event listeners to handle tab clicks
 const homeTab = document.getElementById("home-tab");
