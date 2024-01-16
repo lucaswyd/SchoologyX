@@ -1,3 +1,5 @@
+const assignmentBox = document.querySelector(".assignment-box");
+
 // Add event listener for the full screen button
 const fullscreenButton = document.getElementById("fullscreen-button");
 
@@ -111,7 +113,6 @@ if (currentHour >= 0 && currentHour < 7) {
 document.getElementById("greeting").textContent = `${greeting}, Lucas!`;
 
 // Get a reference to the assignment box and the slider buttons
-const assignmentBox = document.querySelector(".assignment-box");
 const leftButton = document.querySelector(".slider-button-left");
 const rightButton = document.querySelector(".slider-button-right");
 const seeMoreButton = document.querySelector(".see-more-button");
