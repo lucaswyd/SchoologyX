@@ -15,10 +15,10 @@ fullscreenButton.addEventListener("click", () => {
 
 // Add this function to fetch assignments
 async function fetchAssignments() {
-    const sectionId = '17-06'; // Replace with the actual section ID
+    const sectionId = '1-01'; // Replace with the actual section ID
 
     try {
-        const response = await fetch(`https://api.schoology.com/v1/sections/${7-06}/assignments`, {
+        const response = await fetch(`https://api.schoology.com/v1/sections/${sectionId}/assignments`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
