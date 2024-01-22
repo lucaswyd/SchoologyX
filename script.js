@@ -15,8 +15,9 @@ fullscreenButton.addEventListener("click", () => {
     }
 });
 
-// Add this function to fetch assignments
+// Add this function to fetch assignments from the Schoology API
 async function fetchAssignments() {
+    const apiKey = 'ba7da6c282e0c4664e7f5235d58b8e50061ef0aed'; // Replace with your Schoology API key
     const sectionId = '1-01'; // Replace with the actual section ID
 
     try {
@@ -24,13 +25,12 @@ async function fetchAssignments() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ba7da6c282e0c4664e7f5235d58b8e50061ef0aed', // Replace with your Schoology API key
+                'Authorization': `Bearer ${apiKey}`,
             },
         });
 
         if (response.ok) {
             const data = await response.json();
-            console.log(data);
             return data.assignments || [];
         } else {
             console.error('Failed to fetch assignments:', response.statusText);
@@ -51,38 +51,12 @@ async function displayAssignments() {
     assignments.forEach((assignment) => {
         assignmentBox.innerHTML += `
             <div class="assignment">
-                <h3>${title}</h3>
-                <p>Description: ${description}</p>
-                <p>Due: ${due}</p>
+                <h3>${assignment.title}</h3>
+                <p>Description: ${assignment.description}</p>
+                <p>Due: ${assignment.due}</p>
             </div>
         `;
     });
-}
-
-// Add the section ID in fetchAssignments function
-async function displayAssignmentOverlay(assignment) {
-    const overlay = document.createElement("div");
-    overlay.className = "overlay";
-
-    const detailsBox = document.createElement("div");
-    detailsBox.className = "assignment-details";
-
-    const closeButton = document.createElement("div");
-    closeButton.className = "close-button";
-    closeButton.textContent = "X";
-    closeButton.addEventListener("click", () => {
-        overlay.remove();
-    });
-
-    detailsBox.innerHTML = `
-        <h2>${title}</h2>
-        <p>Description: ${description}</p>
-        <p>Due: ${due}</p>
-    `;
-
-    detailsBox.appendChild(closeButton);
-    overlay.appendChild(detailsBox);
-    document.body.appendChild(overlay);
 }
 
 // Event listener for assignment boxes
@@ -112,12 +86,9 @@ if (currentHour >= 0 && currentHour < 7) {
 // Display the greeting
 document.getElementById("greeting").textContent = `${greeting}, Lucas!`;
 
-// Get a reference to the assignment box and the slider buttons
+// Get a reference to the slider buttons
 const leftButton = document.querySelector(".slider-button-left");
 const rightButton = document.querySelector(".slider-button-right");
-const seeMoreButton = document.querySelector(".see-more-button");
-
-let currentIndex = 0;
 
 // Event listeners for slider buttons
 rightButton.addEventListener("click", () => {
@@ -146,9 +117,9 @@ function displayAssignmentOverlay(assignment) {
     });
 
     detailsBox.innerHTML = `
-        <h2>${title}</h2>
-        <p>Description: ${description}</p>
-        <p>Due: ${due}</p>
+        <h2>${assignment.title}</h2>
+        <p>Description: ${assignment.description}</p>
+        <p>Due: ${assignment.due}</p>
     `;
 
     detailsBox.appendChild(closeButton);
@@ -156,37 +127,8 @@ function displayAssignmentOverlay(assignment) {
     document.body.appendChild(overlay);
 }
 
-// Event listener for assignment boxes
-assignmentBox.addEventListener("click", (event) => {
-    const assignmentElement = event.target.closest(".assignment");
-    if (assignmentElement) {
-        const index = Array.from(assignmentElement.parentNode.children).indexOf(assignmentElement);
-        const assignment = assignments[index];
-        displayAssignmentOverlay(assignment);
-    }
-});
-
-// Add event listeners to handle tab clicks
-const homeTab = document.getElementById("home-tab");
-const coursesTab = document.getElementById("courses-tab");
-const musicTab = document.getElementById("music-tab");
-const settingsTab = document.getElementById("settings-tab");
-
-homeTab.addEventListener("click", () => {
-    // Handle home tab click
-});
-
-coursesTab.addEventListener("click", () => {
-    // Handle courses tab click
-});
-
-musicTab.addEventListener("click", () => {
-    // Handle music tab click
-});
-
-settingsTab.addEventListener("click", () => {
-    // Handle settings tab click
-});
+// Display initial assignments
+displayAssignments();
 
 // Initialize Particle.js animation
 particlesJS("particles-js", {
