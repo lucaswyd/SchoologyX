@@ -1,3 +1,41 @@
+const key = "ba7da6c282e0c4664e7f5235d58b8e50061ef0aed";
+const secret = "f2db16faed67dbf6c19db9bcbbdceeda";
+
+const request_authorization = $py2js(function() {
+    const auth = schoolopy.Auth(key, secret, three_legged=True, domain='https://roundrockisd.schoology.com');
+    return auth.request_authorization();
+});
+
+const get_section_events = $py2js(function(section_id) {
+    const sc = schoolopy.Schoology(auth);
+    return sc.get_section_events(section_id=section_id);
+});
+
+function startAuthorization() {
+    request_authorization().then(function(url) {
+        // Handle and display the authorization URL (e.g., redirect user)
+        console.log('Authorization URL:', url);
+    });
+}
+
+function authorizeAndFetchEvents() {
+    if (!auth.authorize()) {
+        console.error('User not authorized!');
+        return;
+    }
+
+    get_section_events(6803451612).then(function(data) {
+        // Process and display the retrieved assignment data
+        console.log('Section events:', data);
+    });
+}
+
+// Call functions based on your application logic
+startAuthorization();
+//authorizeAndFetchEvents();
+
+
+
 const assignmentBox = document.querySelector(".assignment-box");
 
 // Add event listener for the full screen button
